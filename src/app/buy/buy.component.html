@@ -1,0 +1,6 @@
+<div class="balls">
+  <div *ngFor="let ball of balls" class="ball">
+    <input [disabled]="shouldCheckBoxDisabled && ball.value !== true" type="checkbox" id="check-{{ball.id}}" [(ngModel)]="ball.value">
+    <label for="check-{{ball.id}}"> {{ball.id}} </label>
+  </div>
+</div>

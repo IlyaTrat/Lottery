@@ -1,0 +1,25 @@
+.grid-main {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 20% 70% 10%;
+    background-color: rgb(0, 110, 255);
+    height: 100vh;
+}
+
+app-head {
+    grid-column: 2;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8)
+}
+
+.outlet {
+    grid-column: 2;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7)
+}
+
+app-bottom {
+    grid-column: 2;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6)
+}

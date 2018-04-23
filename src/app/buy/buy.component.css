@@ -1,0 +1,34 @@
+input:checked + label {
+    background-color: rgb(206, 194, 36);
+}
+
+input {
+    display: none;
+}
+
+.balls {
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    grid-template-rows: repeat(6, auto); 
+    grid-gap: 5px;
+}
+
+label {
+    display: inline-block;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    vertical-align: middle;
+  }
+
+  .ball {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 0px;
+    background: #fff;
+    border: 2px solid #666;
+    text-align: center;
+    justify-self: center;
+  }
