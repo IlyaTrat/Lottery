@@ -1,3 +1,11 @@
+.main-grid {
+    display: grid;
+    grid-template-areas: 
+    'balls balls balls'
+    'random message send';
+    grid-gap: 5px;
+}
+
 input:checked + label {
     background-color: rgb(206, 194, 36);
 }
@@ -9,8 +17,8 @@ input {
 .balls {
     display: grid;
     grid-template-columns: repeat(10, auto);
-    grid-template-rows: repeat(6, auto); 
     grid-gap: 5px;
+    grid-area: balls;
 }
 
 label {
@@ -20,9 +28,9 @@ label {
     height: 36px;
     line-height: 36px;
     vertical-align: middle;
-  }
+}
 
-  .ball {
+.ball {
     border-radius: 50%;
     width: 36px;
     height: 36px;
@@ -31,4 +39,16 @@ label {
     border: 2px solid #666;
     text-align: center;
     justify-self: center;
-  }
+}
+
+.random-button {
+    grid-area: random;
+}
+
+.send-button {
+    grid-area: send;
+}
+
+.message {
+    grid-area: message;
+}
