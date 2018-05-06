@@ -1,3 +1,7 @@
-<p>
-  check works!
-</p>
+<div>
+  <label> {{gameName}} </label>
+  <select>
+    <option *ngFor="let game of games">{{game}}</option>
+  </select>
+  <label>Win numbers</label>
+</div>

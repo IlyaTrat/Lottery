@@ -13,6 +13,9 @@ import { RulesComponent } from './rules/rules.component';
 import { BuyComponent } from './buy/buy.component';
 import { AboutComponent } from './about/about.component';
 import { ServerDataService } from './server-data.service';
+import { CheckWindowComponent } from './check-window/check-window.component';
+import { BuyWindowComponent } from './buy-window/buy-window.component';
+import { HomeWindowComponent } from './home-window/home-window.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { ServerDataService } from './server-data.service';
     CheckComponent,
     RulesComponent,
     BuyComponent,
-    AboutComponent
+    AboutComponent,
+    CheckWindowComponent,
+    BuyWindowComponent,
+    HomeWindowComponent
   ],
   imports: [
     BrowserModule,

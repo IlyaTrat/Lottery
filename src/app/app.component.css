@@ -1,9 +1,9 @@
 .grid-main {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-template-rows: 20% 70% 10%;
+    grid-template-rows: 20vh auto 10vh;
     background-color: rgb(0, 110, 255);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 app-head {
