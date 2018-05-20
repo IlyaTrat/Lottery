@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerDataService, GameData } from '../server-data.service';
 
 @Component({
   selector: 'app-home-window',
@@ -6,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-window.component.css']
 })
 export class HomeWindowComponent implements OnInit {
-  private data = [
-    {gameName: 'lottery 1', jackpot: 1234, nextGame: [10, 10, 2018], lastWin: [1, 2, 3, 4]},
-    {gameName: 'lottery 2', jackpot: 123, nextGame: [11, 11, 2018], lastWin: [1, 2, 3, 4]},
-    {gameName: 'lottery 3', jackpot: 12, nextGame: [12, 12, 2018], lastWin: [1, 2, 3, 4]},
-  ];
+  private gameData: GameData[];
 
-  constructor() { }
+  constructor(private servarDataService: ServerDataService) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData(): void {
+    this.servarDataService.getData('home').subscribe(data => this.gameData = data);
   }
 
 }

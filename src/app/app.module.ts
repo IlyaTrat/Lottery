@@ -7,15 +7,21 @@ import { AppComponent } from './app.component';
 import { HeadComponent } from './head/head.component';
 import { BottomComponent } from './bottom/bottom.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { HomeComponent } from './home/home.component';
-import { CheckComponent } from './check/check.component';
+import { HomeComponent } from './home-window/home/home.component';
+import { CheckComponent } from './check-window/check/check.component';
 import { RulesComponent } from './rules/rules.component';
-import { BuyComponent } from './buy/buy.component';
+import { BuyComponent } from './buy-window/buy/buy.component';
 import { AboutComponent } from './about/about.component';
 import { ServerDataService } from './server-data.service';
 import { CheckWindowComponent } from './check-window/check-window.component';
 import { BuyWindowComponent } from './buy-window/buy-window.component';
 import { HomeWindowComponent } from './home-window/home-window.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login-window/login/login.component';
+import { LoginService } from './login.service';
+import { RegistrationComponent } from './login-window/registration/registration.component';
+import { LoginWindowComponent } from './login-window/login-window.component';
+import { RememberComponent } from './login-window/remember/remember.component';
 
 
 @NgModule({
@@ -30,14 +36,19 @@ import { HomeWindowComponent } from './home-window/home-window.component';
     AboutComponent,
     CheckWindowComponent,
     BuyWindowComponent,
-    HomeWindowComponent
+    HomeWindowComponent,
+    LoginComponent,
+    RegistrationComponent,
+    LoginWindowComponent,
+    RememberComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [ServerDataService],
+  providers: [ServerDataService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

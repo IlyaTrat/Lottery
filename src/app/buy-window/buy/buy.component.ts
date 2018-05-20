@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Ticket, ServerDataService } from '../../server-data.service';
 
 @Component({
   selector: 'app-buy',
@@ -8,10 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class BuyComponent implements OnInit {
   private balls = [];
+  private ticket: Ticket;
   @Input() gameName: string;
   @Input() maxSelectedCheckbox: number;
   @Input() maxBalls: number;
-  constructor() {
+  constructor(private serverDataService: ServerDataService) {
   }
 
   get shouldCheckBoxDisabled(): boolean {
@@ -41,12 +43,22 @@ export class BuyComponent implements OnInit {
   }
 
 // TODO: add service
-  private sendChosenBalls () {
+  private checkChosenBalls () {
     const send = this.balls.filter(item => item.value === true);
-    send.length !== 4 ? console.log('Wrong number') : console.log(send);
+    send.length !== this.maxSelectedCheckbox ? console.log('Wrong number') : this.sendChosen(this.gameName, 'vova', send.map(x => x.id));
+  }
+
+  private sendChosen(gameName: String, userId: String, numbers: Array<Number>) {
+    this.ticket = {
+      gameName: gameName,
+      userId: userId,
+      numbers: numbers
+    };
+    console.log(this.ticket);
+    this.serverDataService.postTicket(this.ticket).subscribe(data => console.log(data));
   }
 
   private getRandomInt(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min)) + min;
+    return Math.floor(Math.random() * (max - min) + min);
   }
 }

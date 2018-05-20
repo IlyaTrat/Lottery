@@ -1,0 +1,11 @@
+<div class="main-grid">
+  <div class="balls" id="{{gameName}}">
+    <div *ngFor="let ball of balls" class="ball">
+      <input [disabled]="shouldCheckBoxDisabled && ball.value !== true" type="checkbox" id="check-{{gameName}}-{{ball.id}}" [(ngModel)]="ball.value">
+      <label for="check-{{gameName}}-{{ball.id}}"> {{ball.id}} </label>
+    </div>
+  </div>
+  <button (click)="selectRandomBalls(maxSelectedCheckbox)" class="random-button">Radnom</button>
+  <span class="message">Select {{maxSelectedCheckbox}} numbers</span>
+  <button (click)="checkChosenBalls()" class="send-button">Submit</button>
+</div>

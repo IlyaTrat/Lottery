@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameData, ServerDataService } from '../server-data.service';
 
 @Component({
   selector: 'app-check-window',
@@ -6,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./check-window.component.css']
 })
 export class CheckWindowComponent implements OnInit {
-  private data = [
-    {gameName: 'lottery 1', numberOfGames: 20},
-    {gameName: 'lottery 2', numberOfGames: 20},
-    {gameName: 'lottery 3', numberOfGames: 20},
-  ];
+  private gameData: GameData[];
 
-  constructor() { }
+  constructor(private servarDataService: ServerDataService) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData(): void {
+    this.servarDataService.getData('check').subscribe(data => this.gameData = data);
   }
 
 }

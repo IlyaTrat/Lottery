@@ -7,7 +7,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 })
 export class CheckComponent implements OnInit {
   @Input() gameName: string;
-  @Input() numberOfGames: number;
+  @Input() gamesCount: number;
   private games: Array<number>;
 
   constructor() { }
@@ -17,7 +17,7 @@ export class CheckComponent implements OnInit {
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnChanges() {
-    this.games = Array(this.numberOfGames).fill(0).map((item, ind) => ind);
+    this.games = Array(this.gamesCount).fill(0).map((item, ind) => ind);
   }
 
 }

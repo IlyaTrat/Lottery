@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameData, ServerDataService } from '../server-data.service';
 
 @Component({
   selector: 'app-buy-window',
@@ -6,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buy-window.component.css']
 })
 export class BuyWindowComponent implements OnInit {
-  private data = [
-    {gameName: 'lottery 1', maxBalls: 50, maxSelectedCheckbox: 5},
-    {gameName: 'lottery 2', maxBalls: 40, maxSelectedCheckbox: 3},
-    {gameName: 'lottery 3', maxBalls: 45, maxSelectedCheckbox: 4}
-  ];
+  private gameData: GameData[];
 
-  constructor() { }
+  constructor(private servarDataService: ServerDataService) { }
 
   ngOnInit() {
+    this.getData();
   }
 
+  getData(): void {
+    this.servarDataService.getData('buy').subscribe(data => this.gameData = data);
+  }
 }
