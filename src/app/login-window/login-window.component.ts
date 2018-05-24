@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-window.component.css']
 })
 export class LoginWindowComponent implements OnInit {
+  paths: String[] = [
+    'login'
+  ];
 
   constructor() { }
 

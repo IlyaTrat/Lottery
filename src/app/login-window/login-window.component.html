@@ -1,3 +1,2 @@
-<p>
-  login-window works!
-</p>
+<a *ngFor="let path of paths" routerLink="/{{path}}"> {{path}} </a>
+<router-outlet name="aux"></router-outlet>

@@ -7,5 +7,5 @@
   </div>
   <button (click)="selectRandomBalls(maxSelectedCheckbox)" class="random-button">Radnom</button>
   <span class="message">Select {{maxSelectedCheckbox}} numbers</span>
-  <button (click)="checkChosenBalls()" class="send-button">Submit</button>
+  <button (click)="checkChosenBalls()" class="send-button" [disabled]="user.userId === ''">Submit</button>
 </div>

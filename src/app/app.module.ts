@@ -21,8 +21,6 @@ import { LoginComponent } from './login-window/login/login.component';
 import { LoginService } from './login.service';
 import { RegistrationComponent } from './login-window/registration/registration.component';
 import { LoginWindowComponent } from './login-window/login-window.component';
-import { RememberComponent } from './login-window/remember/remember.component';
-
 
 @NgModule({
   declarations: [
@@ -40,7 +38,6 @@ import { RememberComponent } from './login-window/remember/remember.component';
     LoginComponent,
     RegistrationComponent,
     LoginWindowComponent,
-    RememberComponent
   ],
   imports: [
     BrowserModule,
